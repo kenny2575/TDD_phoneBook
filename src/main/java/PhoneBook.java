@@ -1,20 +1,27 @@
+import java.util.HashMap;
 import java.util.TreeMap;
 
 public class PhoneBook {
 
     TreeMap<String, String> phoneBook = new TreeMap<>();
-
+    HashMap<String, String> numberBook = new HashMap<>();
     public int add(String name, String number){
         if (name == null || number == null){
             throw new NullPointerException("Name or phone number is empty");
         }
 
-        phoneBook.putIfAbsent(name, number);
+        if(phoneBook.putIfAbsent(name, number) == null){
+            numberBook.put(number, name);
+        };
 
         return phoneBook.size();
     }
 
     public String findByNumber(String number){
+
+        if (numberBook.containsKey(number)){
+            return numberBook.get(number);
+        }
         return null;
     }
 }
