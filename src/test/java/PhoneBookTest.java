@@ -50,5 +50,4 @@ public class PhoneBookTest {
         sut.add("Test", "8-800-355-55-44");
         assertEquals(expected, sut.findByName("Test Name"));
     }
-
 }

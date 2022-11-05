@@ -31,4 +31,8 @@ public class PhoneBook {
         }
         return null;
     }
+
+    public void printAllNames(){
+        phoneBook.keySet().forEach( value -> System.out.println(value));
+    }
 }
