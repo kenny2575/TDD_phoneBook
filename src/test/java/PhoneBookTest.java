@@ -42,4 +42,13 @@ public class PhoneBookTest {
         assertEquals(expected, sut.findByNumber("8-800-355-55-23"));
     }
 
+    @Test
+    void findByNameTest(){
+        String expected = "8-800-355-55-23";
+        sut.add("Test Name", "8-800-355-55-23");
+        sut.add("Test Surname", "8-800-355-55-00");
+        sut.add("Test", "8-800-355-55-44");
+        assertEquals(expected, sut.findByName("Test Name"));
+    }
+
 }
