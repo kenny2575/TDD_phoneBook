@@ -5,6 +5,12 @@ public class PhoneBook {
     TreeMap<String, String> phoneBook = new TreeMap<>();
 
     public int add(String name, String number){
-        return 0;
+        if (name == null || number == null){
+            throw new NullPointerException("Name or phone number is empty");
+        }
+
+        phoneBook.putIfAbsent(name, number);
+
+        return phoneBook.size();
     }
 }
